@@ -101,16 +101,16 @@ describe('Thermostat', function() {
             for(var i = 0; i < 11; i++) {
                 thermostat.turnDown();
             };
-            expect(thermostat.energyUsage()).toEqual('low-usage');
+            expect(thermostat.energyUsage()).toEqual('Low Usage');
         });
         it('returns medium-usage if temperature is between 18 & 24', function() {
-            expect(thermostat.energyUsage()).toEqual('medium-usage');
+            expect(thermostat.energyUsage()).toEqual('Medium Usage');
         });
         it('returns high-usage if temperature is over 24', function() {
             for(var i = 0; i < 10; i++) {
                 thermostat.turnUp();
             };
-            expect(thermostat.energyUsage()).toEqual('high-usage');
+            expect(thermostat.energyUsage()).toEqual('High Usage');
         });
     });
 });
