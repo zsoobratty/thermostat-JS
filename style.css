@@ -1,5 +1,7 @@
 body {
     background-color:  rgba(250, 128, 114, 0.541);
+
+    font-family: "Arial", Times, serif;
 }
 
 /* The switch - the box around the slider */
