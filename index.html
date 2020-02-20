@@ -18,9 +18,9 @@
         <br>
         <h4> Power Saving Mode:</h4>
         Off <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" class="toggled_on" checked>
             <span class="slider round"></span>
-        </label> On
+            </label> On
         <div class="energy_usage"><h2>Medium Usage</h2></div>
         <script src="src/Thermostat.js"></script>
         <script src="src/jquery-3.4.1.js"></script>
@@ -46,6 +46,20 @@
             $('.current_temp').text(thermostat.temperature);
             $('.energy_usage').text(thermostat.energyUsage())
         })
+        $('.toggled_on').on('click', function() {
+            // $(this).toggleClass('toggled_off');
+            if(thermostat.powerSavingMode) {
+                thermostat.togglePowerSavingOff();
+            } else {
+                thermostat.togglePowerSavingOn();
+                $('.current_temp').text(thermostat.temperature);
+               
+            }
+        })
+        // $('.toggled_off').on('click', function() {
+        //     thermostat.togglePowerSavingOn();
+        //     $(this).toggleClass('toggled_on')
+        // })
     </script>
     </body>  
 </html>
