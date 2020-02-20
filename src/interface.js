@@ -8,11 +8,25 @@
             thermostat.turnUp();
             $('.current_temp').text(thermostat.temperature);
             $('.energy_usage').text(thermostat.energyUsage())
+            if (thermostat.energyUsage() === 'High Usage') {
+                $('.current_temp').css('color', 'red')
+            } else if (thermostat.energyUsage() === 'Medium Usage') {
+                $('.current_temp').css('color', 'black') 
+            } else {
+                $('.current_temp').css('color', 'green')
+            }
         })
         $('.temp_down').on('click', function() {
             thermostat.turnDown();
             $('.current_temp').text(thermostat.temperature);
             $('.energy_usage').text(thermostat.energyUsage())
+            if (thermostat.energyUsage() === 'High Usage') {
+                $('.current_temp').css('color', 'red')
+            } else if (thermostat.energyUsage() === 'Medium Usage') {
+                $('.current_temp').css('color', 'black') 
+            } else {
+                $('.current_temp').css('color', 'green')
+            }
         })
         $('.reset_temp').on('click', function() {
             thermostat.resetTemperature();
@@ -20,7 +34,6 @@
             $('.energy_usage').text(thermostat.energyUsage())
         })
         $('.toggle_power').on('click', function() {
-            // $(this).toggleClass('toggled_off');
             if(thermostat.powerSavingMode) {
                 thermostat.togglePowerSavingOff();
             } else {
