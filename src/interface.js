@@ -11,7 +11,7 @@
             if (thermostat.energyUsage() === 'High Usage') {
                 $('.current_temp').css('color', 'red')
             } else if (thermostat.energyUsage() === 'Medium Usage') {
-                $('.current_temp').css('color', 'black') 
+                $('.current_temp').css('color', 'black')
             } else {
                 $('.current_temp').css('color', 'green')
             }
@@ -23,7 +23,7 @@
             if (thermostat.energyUsage() === 'High Usage') {
                 $('.current_temp').css('color', 'red')
             } else if (thermostat.energyUsage() === 'Medium Usage') {
-                $('.current_temp').css('color', 'black') 
+                $('.current_temp').css('color', 'black')
             } else {
                 $('.current_temp').css('color', 'green')
             }
