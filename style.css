@@ -66,3 +66,14 @@ body {
   .slider.round:before {
     border-radius: 50%;
   }
+
+  .low-usage {
+    color: green;
+  }
+
+  .medium-usage {
+    color: black;
+  }
+  .high-usage {
+    color:red;
+  }
