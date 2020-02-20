@@ -8,20 +8,23 @@
     </head>
 
     <body>
-        <div class="current_temp"><h1>25</h1></div>
-        <button class="temp_down">-</button>
         <button class="temp_up">+</button>
+        <br>
+        <br>
+        <div class="current_temp"><h1>25</h1></div>
+        <br>
+        <button class="temp_down">-</button>
         <br>
         <br>
         <button class="reset_temp">Reset</button>
         <br>
         <br>
+        <div class="energy_usage"><h2>Medium Usage</h2></div>
         <h4> Power Saving Mode:</h4>
         Off <label class="switch">
-            <input type="checkbox" class="toggled_on" checked>
+            <input type="checkbox" class="toggle_power" checked>
             <span class="slider round"></span>
             </label> On
-        <div class="energy_usage"><h2>Medium Usage</h2></div>
         <script src="src/Thermostat.js"></script>
         <script src="src/jquery-3.4.1.js"></script>
         <script>
@@ -46,20 +49,15 @@
             $('.current_temp').text(thermostat.temperature);
             $('.energy_usage').text(thermostat.energyUsage())
         })
-        $('.toggled_on').on('click', function() {
+        $('.toggle_power').on('click', function() {
             // $(this).toggleClass('toggled_off');
             if(thermostat.powerSavingMode) {
                 thermostat.togglePowerSavingOff();
             } else {
                 thermostat.togglePowerSavingOn();
                 $('.current_temp').text(thermostat.temperature);
-               
-            }
+            };
         })
-        // $('.toggled_off').on('click', function() {
-        //     thermostat.togglePowerSavingOn();
-        //     $(this).toggleClass('toggled_on')
-        // })
     </script>
     </body>  
 </html>
