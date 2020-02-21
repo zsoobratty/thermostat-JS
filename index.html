@@ -2,7 +2,8 @@
 <center>
 <html>
     <head>
-       <title>Thermostat App</title> 
+        <meta charset="utf-8">
+        <title>Thermostat App</title> 
        <h1>Thermostat</h1>
        <link rel="stylesheet" href="style.css">
     </head>
@@ -25,8 +26,17 @@
             <input type="checkbox" class="toggle_power" checked>
             <span class="slider round"></span>
             </label> On
-        <script src="src/Thermostat.js"></script>
-        <script src="src/jquery-3.4.1.js"></script>
-        <script src="src/interface.js"></script>
+
+        <section>
+            <h1>Temperature in <span id="location_temp"></span></h1>
+                <form id="select-city">
+                    <input id="current-city" type="text" placeholder="Enter a City"></input>
+                    <input type="submit"></input>
+                </form>
+        </section>
+            <script src="src/Thermostat.js"></script>
+            <script src="src/jquery-3.4.1.js"></script>
+            <script src="src/interface.js"></script>
+
     </body>  
 </html>

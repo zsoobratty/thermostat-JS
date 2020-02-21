@@ -1,24 +1,22 @@
         var thermostat = new Thermostat();
 
         $(document).ready(function() {
-            $('.current_temp').text(thermostat.temperature);
+            $('.current_temp').text(thermostat.temperature + '°C');
             $('.energy_usage').text(thermostat.energyUsage())
+            locationTemp();
           })
         $('.temp_up').on('click', function() {
             thermostat.turnUp();
             updateTemperature();
-            $('.energy_usage').text(thermostat.energyUsage())
             
         })
         $('.temp_down').on('click', function() {
             thermostat.turnDown();
             updateTemperature();
-            $('.energy_usage').text(thermostat.energyUsage())
         })
         $('.reset_temp').on('click', function() {
             thermostat.resetTemperature();
             updateTemperature();
-            $('.energy_usage').text(thermostat.energyUsage())
         })
         $('.toggle_power').on('click', function() {
             if(thermostat.powerSavingMode) {
@@ -30,6 +28,20 @@
         })
 
         function updateTemperature() {
-            $('#current_temp').text(thermostat.temperature);
-            $('#current_temp').attr('class', thermostat.energyUsage());
+            $('#current_temp').text(thermostat.temperature + '°C');
+            $('body').attr('class', thermostat.energyUsage());
+            $('.energy_usage').text(thermostat.energyUsage());
+        };
+        
+        function locationTemp () {
+            $('#select-city').submit(function(event) {
+                event.preventDefault();
+                var url = "https://api.openweathermap.org/data/2.5/weather?q="
+                var city = $('#current-city').val();
+                var units = "units=metric"
+                var token = "&appid=0c76eba986811f68453c8d968330713b&"
+                $.get(url + city + token + units, function(data) {
+                    $('#location_temp').text(data.name + " " + Math.floor(data.main.temp) + '°C');
+                });
+            });
         };
